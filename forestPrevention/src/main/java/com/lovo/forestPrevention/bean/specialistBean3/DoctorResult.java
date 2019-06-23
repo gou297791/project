@@ -1,10 +1,12 @@
 package com.lovo.forestPrevention.bean.specialistBean3;
 
 
+import com.lovo.forestPrevention.bean.disasterBean2.SysEvent;
+
 public class DoctorResult {
 
-  private long resultId;
-  private long eventId;
+    private long resultId;
+  private SysEvent sysEvent;
   private String doctorEventDate;
   private String doctorEventResult;
 
@@ -17,15 +19,13 @@ public class DoctorResult {
     this.resultId = resultId;
   }
 
-
-  public long getEventId() {
-    return eventId;
+  public SysEvent getSysEvent() {
+    return sysEvent;
   }
 
-  public void setEventId(long eventId) {
-    this.eventId = eventId;
+  public void setSysEvent(SysEvent sysEvent) {
+    this.sysEvent = sysEvent;
   }
-
 
   public String getDoctorEventDate() {
     return doctorEventDate;

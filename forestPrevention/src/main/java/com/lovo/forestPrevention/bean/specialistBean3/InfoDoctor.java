@@ -3,25 +3,22 @@ package com.lovo.forestPrevention.bean.specialistBean3;
 
 public class InfoDoctor {
 
-  private long resultId;
-  private long doctorId;
+  private DoctorResult doctorResult;
+  private SysDoctor sysDoctor;
 
-
-  public long getResultId() {
-    return resultId;
+  public DoctorResult getDoctorResult() {
+    return doctorResult;
   }
 
-  public void setResultId(long resultId) {
-    this.resultId = resultId;
+  public void setDoctorResult(DoctorResult doctorResult) {
+    this.doctorResult = doctorResult;
   }
 
-
-  public long getDoctorId() {
-    return doctorId;
+  public SysDoctor getSysDoctor() {
+    return sysDoctor;
   }
 
-  public void setDoctorId(long doctorId) {
-    this.doctorId = doctorId;
+  public void setSysDoctor(SysDoctor sysDoctor) {
+    this.sysDoctor = sysDoctor;
   }
-
 }
