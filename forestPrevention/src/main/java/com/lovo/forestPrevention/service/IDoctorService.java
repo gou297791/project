@@ -16,12 +16,12 @@ public interface IDoctorService {
      * 根据ID查询专家信息
      * @param doctorId 专家ID
      */
-    public  void findDoctor(int doctorId);
+    public  SysDoctor findDoctor(int doctorId);
     /**
      * 根据专家姓名查询专家
      * @param doctorName 专家姓名
      */
-    public  void findDoctor(String doctorName);
+    public  SysDoctor findDoctor(String doctorName);
 
     /**
      * 修改专家信息

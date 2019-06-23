@@ -14,9 +14,9 @@ public interface IDoctorResultService {
      * @param sysEvent  时间对象
      * @param doctorEventResult   会商结果
      * @param date  会商时间
-     * @param list 专家集合
+     *
      * @return  会商记录ID
      */
 
-    public int adddoctorResult(SysEvent sysEvent,String doctorEventResult , Date date, List<SysDoctor> list);
+    public int adddoctorResult(SysEvent sysEvent,String doctorEventResult , Date date);
 }
