@@ -2,14 +2,21 @@ package com.lovo.forestPrevention.bean.dataBean1;
 
 
 public class SysMouse {
-
+//鼠害id
   private long mouseId;
+  //鼠害名称
   private String mouseName;
+  //食物
   private String mouseFood;
+  //繁殖
   private String mouseBreed;
+  //天敌
   private String mouseEnemy;
+  //图片
   private String mouseImgPath;
+  //防治措施
   private String mouseMethod;
+  //主要危害
   private String mouseHarm;
 
 

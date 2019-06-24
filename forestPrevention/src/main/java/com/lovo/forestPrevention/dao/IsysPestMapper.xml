@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lovo.forestPrevention.dao.ISysPestDao">
+
+    <resultMap id="sysPestId" type="sysPest">
+        <id property="pestId" column="pest_id"></id>
+        <result property="pestName" column="pest_name"></result>
+        <result property="pestHost" column="pest_host" ></result>
+        <result property="pestBreed" column="pest_breed"></result>
+        <result property="pest_enemy" column="pest_enemy"></result>
+        <result property="pestBabyImg" column="pest_baby_img"></result>
+        <result property="pestOldImg" column="pest_old_img"></result>
+        <result property="pestMethod" column="pest_method"></result>
+        <result property="pestHarm" column="pest_harm"></result>
+    </resultMap>
+
+    <select id="addSysPest" parameterType="sysPest">
+         insert into sys_pest(pest_name, pest_host, pest_breed,
+        pest_enemy, pest_baby_img, pest_old_img, pest_method,pest_harm)
+        values (#{pestName},#{pestHost},#{pestBreed},#{pest_enemy},
+        #{pestBabyImg},#{pestOldImg},#{pestMethod},#{pestHarm})
+    </select>
+
+
+</mapper>

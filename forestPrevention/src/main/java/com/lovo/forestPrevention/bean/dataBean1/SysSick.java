@@ -2,13 +2,21 @@ package com.lovo.forestPrevention.bean.dataBean1;
 
 
 public class SysSick {
+  //病害id
   private long sickId;
+  //病害名称
   private String sickName;
+  //病原
   private String sickSource;
+  //发病症状
   private String sickSymptom;
+  //发病规律
   private String sickRule;
+  //图片
   private String sickImgPath;
+  //防治措施
   private String sickMethod;
+  //主要危害
   private String sickHarm;
 
 

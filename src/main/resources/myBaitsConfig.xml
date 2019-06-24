@@ -3,7 +3,7 @@
 <configuration>
     <properties resource="jdbc.properties"></properties>
     <typeAliases>
-        <!--<package name="com.lovo.service.tImg"></package>-->
+        <package name="com.lovo.forestPrevention.bean"></package>
     </typeAliases>
     <environments default="development">
         <environment id="development">
@@ -19,6 +19,9 @@
     </environments>
 
     <mappers>
-        <!--<mapper resource="com/lovo/service/tImg/ImgMapper.xml"></mapper>-->
+        <!--<mapper resource="com/lovo/servicess/tImg/ImgMapper.xml"></mapper>-->
+        <mapper resource="com/lovo/forestPrevention/dao/IsysMouseMapper.xml"></mapper>
+        <mapper resource="com/lovo/forestPrevention/dao/IsysPestMapper.xml"></mapper>
+        <mapper resource="com/lovo/forestPrevention/dao/IsysSickMapper.xml"></mapper>
     </mappers>
 </configuration>

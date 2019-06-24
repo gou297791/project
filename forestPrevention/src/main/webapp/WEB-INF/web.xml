@@ -6,5 +6,31 @@
          version="3.0">
 
   <display-name>Archetype Created Web Application</display-name>
+    <servlet>
+        <servlet-name>sysMouseServlet</servlet-name>
+        <servlet-class>com.lovo.forestPrevention.servlet.SysMouseServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>uploadServlet</servlet-name>
+        <servlet-class>com.lovo.forestPrevention.servlet.UploadServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>findMouseServlet</servlet-name>
+        <servlet-class>com.lovo.forestPrevention.servlet.FindMouseServlet</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>sysMouseServlet</servlet-name>
+        <url-pattern>/sysMouse</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>uploadServlet</servlet-name>
+        <url-pattern>/upload.lovo</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>findMouseServlet</servlet-name>
+        <url-pattern>/Mouse.lovo</url-pattern>
+    </servlet-mapping>
 </web-app>
