@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lovo.forestPrevention.Dao.specialistBean3Dao.IDoctorDao">
+    <resultMap id="doctorMap" type="sysDoctor">
+        <id property="doctorId" column="doctor_id"></id>
+        <result property="doctorName" column="doctor_name"></result>
+        <result property="doctorSex" column="doctor_sex"></result>
+        <result property="doctorBirthday" column="doctor_birthday"></result>
+        <result property="doctorImgPath" column="doctor_img_path"></result>
+        <result property="doctorSpeciality" column="doctor_speciality"></result>
+        <result property="doctorPost" column="doctor_post"></result>
+        <result property="doctorTel" column="doctor_tel"></result>
+        <result property="doctorCompany" column="doctor_company"></result>
+        <result property="doctorHome" column="doctor_home"></result>
+        <result property="doctorEmail" column="doctor_email"></result>
+
+
+    </resultMap>
+
+    <insert id="addDoctor" parameterType="sysDoctor">
+         insert into sys_doctor(doctor_name,doctor_sex,doctor_birthday,
+         doctor_img_path,doctor_speciality,doctor_post,doctor_tel,doctor_company,doctor_home,doctor_email)
+        values (#{doctorName},#{doctorSex},#{doctorBirthday},#{doctorImgPath},#{doctorSpeciality},
+        #{doctorPost},#{doctorTel},#{doctorCompany},#{doctorHome},#{doctorEmail})
+    </insert>
+
+
+
+    <!--条件查询-->
+    <select id="itemFindDoctor" resultMap="doctorMap" parameterType="map">
+        select *
+        from sys_doctor
+        <where>
+            <if test="doctorName!=null and doctorName!=''">
+                and doctor_name=#{studentName}
+            </if>
+            <if test="doctorSpeciality!=null and doctorSpeciality!=''">
+                and doctor_speciality=#{doctorSpeciality}
+            </if>
+
+           <if test="doctorCompany!=null and doctorCompany!=''">
+            and doctor_company=#{doctorCompany}
+            </if>
+        </where>
+        limit #{startNum},#{countPage}
+    </select>
+    <!--查询总行数-->
+    <select id="getCheckCount" resultType="int" parameterType="map">
+        select count(doctor_id) from sys_doctor
+        <where>
+            <if test="doctorName!=null and doctorName!=''">
+                and doctor_name=#{studentName}
+            </if>
+            <if test="doctorSpeciality!=null and doctorSpeciality!=''">
+                and doctor_speciality=#{doctorSpeciality}
+            </if>
+
+            <if test="doctorCompany!=null and doctorCompany!=''">
+                and doctor_company=#{doctorCompany}
+            </if>
+        </where>
+    </select>
+    <select id="findDoctorById" resultMap="doctorMap" parameterType="sysDoctor">
+        select *  from sys_doctor where  doctor_id=#{doctorId}
+
+    </select>
+
+    <select id="findDoctorByName" resultMap="doctorMap" parameterType="sysDoctor">
+        select *  from sys_doctor where  doctor_name=#{studentName}
+
+    </select>
+
+    <select id="updateDoctor" resultMap="doctorMap" parameterType="sysDoctor">
+       update sys_doctor set  doctor_post=#{doctorPost},doctor_tel=#{doctorTel},doctor_email=#{doctorEmail}
+       where doctor_id=#{doctorId}
+
+    </select>
+
+    <select id="removeDoction" resultMap="doctorMap" parameterType="sysDoctor">
+       DELETE FROM sys_doctor WHERE doctor_id=#{doctorId}
+
+    </select>
+</mapper>
